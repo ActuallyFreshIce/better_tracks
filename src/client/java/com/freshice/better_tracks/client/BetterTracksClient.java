@@ -1,8 +1,8 @@
-package org.example.better_tracks.client;
+package com.freshice.better_tracks.client;
 
 import net.fabricmc.api.ClientModInitializer;
 
-public class Better_tracksClient implements ClientModInitializer {
+public class BetterTracksClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
