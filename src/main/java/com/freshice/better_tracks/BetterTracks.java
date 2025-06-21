@@ -2,9 +2,11 @@ package com.freshice.better_tracks;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
-import net.fabricmc.fabric.api.item.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
+import net.minecraft.text.Text;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -27,12 +29,18 @@ public class BetterTracks implements ModInitializer {
 
     public static final Item WAYPOINT_WAND = new WaypointWandItem(new Item.Settings().maxCount(1));
 
+    public static final ItemGroup ITEM_GROUP = FabricItemGroup.builder()
+            .icon(() -> new ItemStack(WAYPOINT_WAND))
+            .displayName(Text.translatable("itemGroup." + MOD_ID + ".main"))
+            .entries((context, entries) -> entries.add(WAYPOINT_WAND))
+            .build();
+
     private static final Map<UUID, PathData> PATHS = new HashMap<>();
 
     @Override
     public void onInitialize() {
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, "waypoint_wand"), WAYPOINT_WAND);
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries -> entries.add(WAYPOINT_WAND));
+        Registry.register(Registries.ITEM_GROUP, new Identifier(MOD_ID, "main"), ITEM_GROUP);
 
         UseBlockCallback.EVENT.register(this::onUseBlock);
         LOGGER.info("BetterTracks initialized");
