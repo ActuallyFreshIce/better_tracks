@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "better_tracks",
+  "version": "${version}",
+  "name": "better_tracks",
+  "description": "A mod to create better curved tracks",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/better_tracks/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "org.example.better_tracks.client.Better_tracksDataGenerator"
+    ],
+    "client": [
+      "org.example.better_tracks.client.Better_tracksClient"
+    ],
+    "main": [
+      "org.example.better_tracks.Better_tracks"
+    ]
+  },
+  "mixins": [
+    "better_tracks.mixins.json",
+    {
+      "config": "better_tracks.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
