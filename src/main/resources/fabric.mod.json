@@ -11,13 +11,13 @@
   "environment": "*",
   "entrypoints": {
     "fabric-datagen": [
-      "org.example.better_tracks.client.Better_tracksDataGenerator"
+      "com.freshice.better_tracks.client.BetterTracksDataGenerator"
     ],
     "client": [
-      "org.example.better_tracks.client.Better_tracksClient"
+      "com.freshice.better_tracks.client.BetterTracksClient"
     ],
     "main": [
-      "org.example.better_tracks.Better_tracks"
+      "com.freshice.better_tracks.BetterTracks"
     ]
   },
   "mixins": [
