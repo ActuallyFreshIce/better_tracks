@@ -5,3 +5,6 @@ This mod is an example Fabric 1.20.1 addon using the Create mod. It adds a **Way
 The Create jar (`create-fabric-0.5.1-j-build.1631+mc1.20.1.jar`) must be placed in `run/mods` when developing.
 
 All mod items appear in the **Better Tracks** creative tab. Currently this tab contains just the Waypoint Wand.
+
+
+PLANNING TO PUSH TO 1.21.1 AND WORK ON AGAIN SOON, CHECK MY TRELLO AT "NAUTICS.CC"
